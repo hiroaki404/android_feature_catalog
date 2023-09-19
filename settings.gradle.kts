@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "android_feature_catalog"
 include(":androidApp")
 include(":shared")
+include(":feature:layout")

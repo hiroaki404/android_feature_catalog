@@ -3,12 +3,14 @@ package com.inspiration.android_feature_catalog.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.inspiration.android_feature_catalog.Greeting
+import com.inspiration.feature.layout.CollapsedRowSample
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    GreetingView(Greeting().greet())
+                    Content()
                 }
             }
         }
@@ -27,14 +29,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingView(text: String) {
-    Text(text = text)
+fun Content() {
+    Column(modifier = Modifier.fillMaxSize()) {
+        CollapsedRowSample()
+    }
 }
 
-@Preview
+@Preview(showBackground = true, backgroundColor = 0xFFFFFF)
 @Composable
 fun DefaultPreview() {
     MyApplicationTheme {
-        GreetingView("Hello, Android!")
+        Content()
     }
 }
